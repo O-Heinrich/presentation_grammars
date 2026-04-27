@@ -7,7 +7,7 @@
 			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 		/>
 
-		<title>reveal.js</title>
+		<title>Grammatiken</title>
 
 		<link rel="stylesheet" href="dist/reset.css" />
 		<link rel="stylesheet" href="dist/reveal.css" />
@@ -21,7 +21,6 @@
 			<div class="slides">
 				<section>
 					<h1>Grammatiken</h1>
-					<img src="./assets/chomsky.png" alt="Teilmengenbeziehung der Chomsky-Hierarchie">
 				</section>
 				<section>
 					<ul>
@@ -57,19 +56,62 @@
 					<section>
 						<h3>Formale Bestandteile</h3>
 						<ul>
-							<li>Menge an Nichtterminalsymbolen N (Alphabet)</li>
-							<li>Menge an Terminalsymbolen T</li>
+							<li>Menge an Nichtterminalsymbolen N = { S, A, B }</li>
+							<li>Menge an Terminalsymbolen T = { a, b, c } (Alphabet)</li>
 							<li>Menge an Produktionsregeln P</li>
-							<li>Startsymbol S</li>
+							<li>Startsymbol S ∈ N</li>
 						</ul>
 					</section>
 					<section>
 						<h3>Produktionsregeln</h3>
 						<ul>
 							<li>α -> β</li>
-							<li>α mindestens ein Terminalsymbol</li>
+							<li>α mindestens ein Nichtterminalsymbol</li>
 							<li>α und β beliebig viele Zeichen aus N und/oder T</li>
 							<li>Oder-Zusammenfassung: α -> β | γ</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Chomsky Hierarchie</h2>
+					Einschränkungen für die Produktionsregeln
+					<img src="./assets/chomsky.png" alt="Teilmengenbeziehung der Chomsky-Hierarchie">
+				</section>
+				<section>
+					<h2>Typ 0 - Unbeschränkte Grammatiken</h2>
+					<ul>
+						<li>Beliebige Grammatiken</li>
+						<li>Rekursiv aufzählbare Sprachen</li>
+						<li>Turingmaschine (semi-entscheidbar)</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Typ 1 - Kontextsensitive Grammatiken</h2>
+						<ul>
+							<li>|α| <= |β|</li>
+							<li>S -> ε</li>
+							<li>Wort wird während der Produktion nicht kürzer</li>
+							<li>Entscheidbar</li>
+						</ul>
+					</section>
+					<section>
+						{ a<sup>n</sup>b<sup>n</sup>c<sup>n</sup> | n >= 0 }<br><br>
+						<ol>
+							<li>S -> S' | ε</li>
+							<li>S' -> aS'Bc | abc</li>
+							<li>cB -> Bc</li>
+							<li>bB -> bb</li>
+						</ol>
+					</section>
+					<section>
+						aabbcc ∈ { a<sup>n</sup>b<sup>n</sup>c<sup>n</sup> | n >= 0 }<br><br>
+						<ul>
+							<li>S -> S'</li>
+							<li>S' -> aS'Bc</li>
+							<li>aS'Bc -> aabcBc (S' -> abc)</li>
+							<li>aabcBc -> aabBcc (cB -> Bc)</li>
+							<li>aabBcc -> aabbcc (bB -> bb)</li>
 						</ul>
 					</section>
 				</section>
