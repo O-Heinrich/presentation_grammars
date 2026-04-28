@@ -125,6 +125,8 @@
 							<li>β darf immer ε sein</li>
 							<li><a href="https://de.wikipedia.org/wiki/Pumping-Lemma#Kontextfreie_Sprachen">Pumping-Lemma</a> (Beweise einer nicht-kontextfreien Sprache)</li>
 							<li>"Frei" vom Kontext - Ableitung unabhängig von anderen Symbolen</li>
+							<li>Programmiersprachen - Backus-Naur-Form</li>
+							<li>Syntax-/Ableitungsbaum</li>
 						</ul>
 					</section>
 					<section>
@@ -161,9 +163,11 @@
 						<ul>
 							<li>β maximal ein Nichtterminalsymbol</li>
 							<li>Nichtterminalsymbol in β immer ganz rechts (rechtsregulär)</li>
-							<li>erweiterte/streng reuläre Grammatiken: β maximal ein Terminalsymbol</li>
+							<li>Linksregulär und rechtsregulär (nicht mischen)</li>
+							<li>erweiterte/streng reguläre Grammatiken: β maximal ein Terminalsymbol</li>
 							<li>gleichmächtig</li>
 							<li>Endlicher Automat</li>
+							<li>Reguläre Ausdrücke</li>
 						</ul>
 					</section>
 					<section>
@@ -182,6 +186,41 @@
 							<li>T -> ε | bS</li>
 						</ul><br>
 						<img src="./assets/noDoubleA_dea.png" alt="Beispiel für einen DEA" class="fragment fade-up">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Backus-Naur-Form</h2>
+						<ul>
+							<li>Darstellung kontextfreier Grammatiken</li>
+							<li>Syntax vieler höherer Programmiersprachen, Befehlssätze o. ä.</li>
+							<li>Konzept kontefreier Grammatiken, andere Darstellung</li>
+							<li>Syntaxdiagramm</li>
+						</ul>
+					</section>
+					<section>
+						S -> aSb | ε<br><br>
+						&lt;S&gt; ::= "a"&lt;S&gt;"b" |<br><br>
+						<img src="./assets/simple_syntax_diagram.drawio.png" alt="Beispiel als Syntaxdiagramm">
+					</section>
+					<section>
+						<ul>
+							<li>S -> N ::= L</li>
+							<li>L -> N | W | 'L | L' | ε</li>
+							<li>N -> '&lt;W&gt;'</li>
+							<li>W -> BW | ε</li>
+							<li>B -> a-z | A-Z | ...</li>
+						</ul>
+					</section>
+					<section>
+						<img src="./assets/backus_naur_as_syntax.drawio.png" alt="Syntaxdiagramm zur Backus-Naur-Form">
+					</section>
+					<section>
+						Weitere Beispiele:<br><br>
+						<ul>
+							<li><a href="https://de.wikipedia.org/wiki/Backus-Naur-Form">wikipedia</a></li>
+							<li><a href="https://condor.depaul.edu/ichu/csc447/notes/wk2/pascal.html">Pascal</a></li>
+						</ul>
 					</section>
 				</section>
 			</div>
