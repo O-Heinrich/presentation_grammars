@@ -34,6 +34,7 @@
 					<ul>
 						<li>Alphabet: Menge an Zeichen</li>
 						<li>Wort: Endliche Zeichenfolge aus einem Alphabet</li>
+						<li>Leeres Wort: ε (|ε| = 0)</li>
 						<li>(Formale) Sprache: Menge an Wörtern über ein Alphabet</li>
 					</ul>
 				</section>
@@ -63,9 +64,9 @@
 						</ul>
 					</section>
 					<section>
-						<h3>Produktionsregeln</h3>
+						<h3>Produktionsregeln</h3><br>
+						α -> β
 						<ul>
-							<li>α -> β</li>
 							<li>α mindestens ein Nichtterminalsymbol</li>
 							<li>α und β beliebig viele Zeichen aus N und/oder T</li>
 							<li>Oder-Zusammenfassung: α -> β | γ</li>
@@ -89,7 +90,7 @@
 					<section>
 						<h2>Typ 1 - Kontextsensitive Grammatiken</h2>
 						<ul>
-							<li>|α| <= |β|</li>
+							<li>|α| &lt;= |β|</li>
 							<li>S -> ε</li>
 							<li>Wort wird während der Produktion nicht kürzer</li>
 							<li>Entscheidbar</li>
@@ -97,12 +98,12 @@
 					</section>
 					<section>
 						{ a<sup>n</sup>b<sup>n</sup>c<sup>n</sup> | n >= 0 }<br><br>
-						<ol>
+						<ul>
 							<li>S -> S' | ε</li>
 							<li>S' -> aS'Bc | abc</li>
 							<li>cB -> Bc</li>
 							<li>bB -> bb</li>
-						</ol>
+						</ul>
 					</section>
 					<section>
 						aabbcc ∈ { a<sup>n</sup>b<sup>n</sup>c<sup>n</sup> | n >= 0 }<br><br>
@@ -113,6 +114,74 @@
 							<li>aabcBc -> aabBcc (cB -> Bc)</li>
 							<li>aabBcc -> aabbcc (bB -> bb)</li>
 						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Typ 2 - Kontextfreie Grammatiken</h2>
+						<ul>
+							<li>α besteht aus genau einem Nichtterminalsymbol</li>
+							<li><s>bB -> bb</s></li>
+							<li>β darf immer ε sein</li>
+							<li><a href="https://de.wikipedia.org/wiki/Pumping-Lemma#Kontextfreie_Sprachen">Pumping-Lemma</a> (Beweise einer nicht-kontextfreien Sprache)</li>
+							<li>"Frei" vom Kontext - Ableitung unabhängig von anderen Symbolen</li>
+						</ul>
+					</section>
+					<section>
+						{ a<sup>n</sup>b<sup>n</sup> | n >= 0 }<br><br>
+						<ul>
+							<li>S -> aSb | ε</li>
+						</ul>
+					</section>
+					<section>
+						aaabbb ∈ { a<sup>n</sup>b<sup>n</sup> | n >= 0 }<br>
+						<ul>
+							<li>S -> aSb</li>
+							<li>aSb -> aaSbb</li>
+							<li>aaSbb -> aaaSbbb</li>
+							<li>aaaSbbb -> aaabbb (S -> ε)</li>
+						</ul>
+					</section>
+					<section>
+						{ vv<sup>R</sup> | v ∈ Σ* }<br><br>
+						<ul>
+							<li>S -> aSa | bSb | a | b | ε</li>
+						</ul><br><br>
+						<br>ababa<br>
+						<ul>
+							<li>S -> aSa</li>
+							<li>aSa -> abSba (S -> bSb)</li>
+							<li>abSba -> ababa (S -> a)</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Typ 3 - Reguläre Grammatiken</h2>
+						<ul>
+							<li>β maximal ein Nichtterminalsymbol</li>
+							<li>Nichtterminalsymbol in β immer ganz rechts (rechtsregulär)</li>
+							<li>erweiterte/streng reuläre Grammatiken: β maximal ein Terminalsymbol</li>
+							<li>gleichmächtig</li>
+							<li>Endlicher Automat</li>
+						</ul>
+					</section>
+					<section>
+						{ w | |w| &lt;= 2 }<br><br>
+						<ul>
+							<li>S -> ε | a | b | aa | ab | bb | ba</li>
+						</ul><br><br>
+						<ul>
+							<li>S -> ε | a | b | aT | bT</li>
+							<li>T -> a | b</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>S -> ε | bS | aT</li>
+							<li>T -> ε | bS</li>
+						</ul><br>
+						<img src="./assets/noDoubleA_dea.png" alt="Beispiel für einen DEA" class="fragment fade-up">
 					</section>
 				</section>
 			</div>
