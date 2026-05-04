@@ -61,3 +61,15 @@ Das Halteproblem ist ein klassisches Beispiel für eine Typ 0 Sprache
 Die **kontextsensitiven Grammatiken** erzwingen die Entscheidbarkeit von Sprachen, das heißt, dass sich für jedes Wort in endlicher Zeit entscheiden lässt, ob es in der Sprache ist, oder nicht, und nicht nur bei Wörtern, welche tatsächlich in der Sprache liegen. Das Problem bei unbeschränkten Grammatiken liegt darin, dass die Wortlänge des erzeugten Wortes während der Erzeugung nicht nur größer, sondern auch kleiner werden kann. Man ist sich also nie garantiert sicher, dass sich ein Wort nicht vielleicht doch noch erzeugen lässt. Die kontextsensitiven Grammatiken definieren, dass bei der Ableitungsregel das Wort nicht mehr kürzer werden darf, also |α| <= |β|. Für das leere Wort muss eine Ausnahme gemacht werden, da ansonsten keine kontextsensitive Sprache das leere Wort enthalten könnte. Daher ist die Ableitung S -> ε explizit erlaubt, solange S in keiner Ersetzungsregel auf der rechten Seite steht.  
 Die oben gezeigte Grammatik für die Sprache { a<sup>n</sup>b<sup>n</sup>c<sup>n</sup> | n >= 1 } ist ein Beispiel für eine kontextsensitive Grammatik.
 
+#### Typ 2 - Kontextfreie Grammatiken
+
+Ein Problem mit kontextsensitiven Grammatiken ist, dass die Ableitung von Nichtterminalsymbolen von den umliegenden Terminalsymbolen abhängt. Man muss also beim Ableiten immer auf den richtigen *Kontext* achten und Terminalsymbole sind auch nicht immer final und können sich noch ändern. Die **kontextfreien Grammatiken** fordern, dass auf der linken Seite der Ableitungsregeln immer nur genau ein Nichtterminalsymbol stehen darf. Eine Sonderbehandlung des leeren Wortes ist hier nicht mehr notwendig, dies darf nun immer auf der rechten Seite einer Regel stehen.
+
+##### Backus-Naur-Form
+
+##### Syntaxbaum
+
+##### Pumping-Lemma
+
+#### Typ 3 - Reguläre Grammatiken
+
