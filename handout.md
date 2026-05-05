@@ -2,7 +2,7 @@
 
 ### Formaler Aufbau
 
-Eine Grammatik ist eine Sammlung von Ersetzungsregeln (auch Produktionsregeln oder Ableitungsregeln), aus denen Wörter von formalen Sprachen gebildet werden können. Die formalen Grammatiken sind ähnlich zu den Grammatiken der natürlichen Sprache, welche den Aufbau eines Satzes (ein Satz ist hier das äquivalent zum Wort) vorgeschrieben wird. Es wird unterschieden zwischen den sogenannten **Terminalsymbolen** und den **Nichtterminalsymbolen**. Die Ersetzungsregeln einer Grammatik benötigen immer mindestens ein Nichtterminalsymbol, um daraus eine andere Zeichenkette abzuleiten. Die Terminalsymbole entsprechen dem Alphabet, aus dem eine Sprache erzeugt wird. Alle Wörter, welche durch endlich lange Anwendung der Regeln einer Grammatik abgeleitet werden können ilden dann die formale Sprache, die von der Grammatik erzeugt wird.
+Eine Grammatik ist eine Sammlung von Ersetzungsregeln (auch Produktionsregeln oder Ableitungsregeln), aus denen Wörter von formalen Sprachen gebildet werden können. Die formalen Grammatiken sind ähnlich zu den Grammatiken der natürlichen Sprache, welche den Aufbau eines Satzes (ein Satz ist hier das äquivalent zum Wort) vorgeschrieben wird. Es wird unterschieden zwischen den sogenannten **Terminalsymbolen** und den **Nichtterminalsymbolen**. Die Ersetzungsregeln einer Grammatik benötigen immer mindestens ein Nichtterminalsymbol, um daraus eine andere Zeichenkette abzuleiten. Die Terminalsymbole entsprechen dem Alphabet, aus dem eine Sprache erzeugt wird. Alle Wörter, welche durch endlich lange Anwendung der Regeln einer Grammatik abgeleitet werden können bilden dann die formale Sprache, die von der Grammatik erzeugt wird.
 
 #### Formale Definition
 
@@ -43,7 +43,7 @@ Diese Grammatik erzeugt alle Wörter der Sprache { a<sup>n</sup>b<sup>n</sup>c<s
 
 ### Chomsky-Hierarchie:
 
-Die Chomsky-Hierarchie unterteilt Grammatiken anhand von Kriterien in vier Typen, welche aufsteigend strikter werden. Es gilt, dass Grammatiken, welche den höheren Typen entsprechen, auch den niedrigeren inplizit entsprechen. Dasselbe gilt auch für die von den Grammatiken erzeugten Sprachen, sie können auf dieselbe Art eingeteilt werden.
+Die Chomsky-Hierarchie unterteilt Grammatiken anhand von Kriterien in vier Typen, welche aufsteigend strikter werden. Es gilt, dass Grammatiken, welche den höheren Typen entsprechen, auch den niedrigeren implizit entsprechen. Dasselbe gilt auch für die von den Grammatiken erzeugten Sprachen, sie können auf dieselbe Art eingeteilt werden.
 
 ![Chomsky-Hierarchie](./assets/chomsky.png)
 
@@ -67,7 +67,7 @@ Ein Problem mit kontextsensitiven Grammatiken ist, dass die Ableitung von Nichtt
 
 ##### Beispiel
 
-Die Sprache { a<sup>n</sup>b<sup>n</sup> | n >= 0 } wird von der kontextfreien Grammatik mit den foglenden Ableitungsregeln erzeugt:
+Die Sprache { a<sup>n</sup>b<sup>n</sup> | n >= 0 } wird von der kontextfreien Grammatik mit den folgenden Ableitungsregeln erzeugt:
 
 S -> aSb | ε
 
@@ -94,7 +94,7 @@ Oft wird die Backus-Naur-Form im Zusammenhang mit einem Syntaxdiagramm verwendet
 
 ##### Pumping-Lemma
 
-Das [Pumping-Lemma für kontextfreie Sprachen](https://www.cs.hs-rm.de/~sabel/teaching/archive/assets/SS2022/FSK/folien/18-pumping-lemma-cfl-4s.pdf) bietet eine Möglichkeit, zu widerlegen, dass eine Sprache kontextfrei ist. Die grundlegende Idee ist, dass wenn eine Sprache kontextfrei ist, ihre Wörter ab einer bestimmten Länge "aufgepumpt" werden können und immernoch in der Sprache sind.
+Das [Pumping-Lemma für kontextfreie Sprachen](https://www.cs.hs-rm.de/~sabel/teaching/archive/assets/SS2022/FSK/folien/18-pumping-lemma-cfl-4s.pdf) bietet eine Möglichkeit, zu widerlegen, dass eine Sprache kontextfrei ist. Die grundlegende Idee ist, dass wenn eine Sprache kontextfrei ist, ihre Wörter ab einer bestimmten Länge "aufgepumpt" werden können und immer noch in der Sprache sind.
 
 #### Typ 3 - Reguläre Grammatiken
 
@@ -117,4 +117,4 @@ In der theoretischen Informatik ist ein **[regulärer Ausdruck](https://www.tcs.
 
 ##### Pumping-Lemma
 
-Das Pumping Lemma existiert nicht nur für kontextfreie, sondern auch reguläre Sprachen. Das Konzept vom [Pumping-Lemma für reguläre Sprachen](https://www.tcs.ifi.lmu.de/teaching/courses-ss-2023/formale-sprachen-und-komplexitaet/fsk_de/12-pumping-lemma.pdf) ist dasselbe, nur in einer einschränkenderen Form. Auch hier dient es zum Beweise, dass eine Sprache nicht regulär ist.
+Das Pumping Lemma existiert nicht nur für kontextfreie, sondern auch reguläre Sprachen. Das Konzept vom [Pumping-Lemma für reguläre Sprachen](https://www.tcs.ifi.lmu.de/teaching/courses-ss-2023/formale-sprachen-und-komplexitaet/fsk_de/12-pumping-lemma.pdf) ist dasselbe, nur in einer einschränkten Form. Auch hier dient es zum Beweise, dass eine Sprache nicht regulär ist.
