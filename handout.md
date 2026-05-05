@@ -65,11 +65,52 @@ Die oben gezeigte Grammatik für die Sprache { a<sup>n</sup>b<sup>n</sup>c<sup>n
 
 Ein Problem mit kontextsensitiven Grammatiken ist, dass die Ableitung von Nichtterminalsymbolen von den umliegenden Terminalsymbolen abhängt. Man muss also beim Ableiten immer auf den richtigen *Kontext* achten und Terminalsymbole sind auch nicht immer final und können sich noch ändern. Die **kontextfreien Grammatiken** fordern, dass auf der linken Seite der Ableitungsregeln immer nur genau ein Nichtterminalsymbol stehen darf. Eine Sonderbehandlung des leeren Wortes ist hier nicht mehr notwendig, dies darf nun immer auf der rechten Seite einer Regel stehen.
 
-##### Backus-Naur-Form
+##### Beispiel
+
+Die Sprache { a<sup>n</sup>b<sup>n</sup> | n >= 0 } wird von der kontextfreien Grammatik mit den foglenden Ableitungsregeln erzeugt:
+
+S -> aSb | ε
 
 ##### Syntaxbaum
+
+Ein Syntaxbaum, auch Ableitungsbaum, ist eine Möglichkeit, die Ableitungsfolge einer kontextfreien Grammatik für ein bestimmtes Wort als Graph grafisch darzustellen. Zum Beispiel ist dies der Ableitungsbaum für das Wort aaabbb ∈ { a<sup>n</sup>b<sup>n</sup> | n >= 0 } für die Grammatik im Beispiel:
+
+![Syntaxbaum-Beispiel](./assets/syntax_tree.png)
+
+##### Backus-Naur-Form
+
+Die Backus-Naur-Form ist eine andere Darstellungsform für kontextfreie Grammatiken, welche vor allem für Syntax von Programmiersprachen oder Befehlssätze verwendet wird. Das Konzept ist identisch zu kontextfreien Grammatiken, es ändert sich lediglich die Schreibweise. Für das obige Beispiel sieht die Backus-Naur-Form zum Beispiel so aus:
+
+&lt;S&gt; ::= "a"&lt;S&gt;"b" |
+
+- Terminalsymbole werden oft in Anführungszeichen gesetzt
+- Nichtterminalsymbole werden mit &lt;&gt; gekennzeichnet
+- Das leere Wort wird nicht mehr durch ε dargestellt sondern einfach leer gelassen
+- Statt einem Pfeil verwendet man ::=
+
+Oft wird die Backus-Naur-Form im Zusammenhang mit einem Syntaxdiagramm verwendet, welches eine Backus-Naur-form grafisch darstellt, indem es mögliche Zeichenfolgen mit Pfeilen darstellt:
+
+![Syntaxdiagramm-Beispiel](./assets/simple_syntax_diagram.drawio.png)
 
 ##### Pumping-Lemma
 
 #### Typ 3 - Reguläre Grammatiken
 
+Ist eine Grammatik eine **reguläre Grammatik**, so ist die Ableitung am einfachsten, da hier die Wörter der Reihe nach von links nach rechts gebildet werden können. Die Definition besagt, dass auf der rechten Seite der Produktionsregel maximal ein Nichtterminalsymbol stehen darf und das dieses, wenn vorhanden, immer das letzte Zeichen (also ganz rechts) sein muss. Dies nennt man dann auch rechtsregulär, das entsprechende Gegenstück, die linksregulären Grammatiken, genügen ebenfalls (rechtsreguläre Grammatiken und linkreguläre Grammatiken sind *gleichmächtig* -> es lassen sich genau dieselben Sprachen erzeugen), solange innerhalb einer Grammatik nicht gemischt wird. Die von regulären Grammatiken erzeugten Sprachen entsprechen genau von (deterministisch oder nichtdeterministischen) endlichen Automaten akzeptierten Sprachen.
+
+##### Streng reguläre Grammatiken
+
+Eine Grammatik ist wird auch erweitert oder streng regulär genannt, wenn auf der rechten Seite der Produktionsregeln immer nur maximal ein Terminalsymbol steht. Allerdings sind streng reguläre Grammatiken gleichmächtig mit regulären Grammatiken.
+
+##### Beispiel
+
+Die Sprache aller Wörter, in denen nie mehrere a nebeneinander stehen wird durch die reguläre Grammatik mit folgenden Ableitungsregeln erzeugt:
+
+S -> ε | bS | aT
+T -> ε | bS
+
+##### Reguläre Ausdrücke
+
+In der theoretischen Informatik ist ein **[regulärer Ausdruck](https://www.tcs.ifi.lmu.de/teaching/courses-ss-2024/formale-sprachen-und-komplexitaet/fsk_de/vl-04a-ft-regulaere-ausdruecke.pdf)** strenger definiert als der aus vielen Programmiersprachen bekannte Regex, das Grundkonzept ist jedoch dasselbe. Mit regulären Ausdrücken können reguläre Sprachen durch eine Zeichenkette definiert werden. Oft wird erlaubt, dass reguläre Ausdrücke syntaktisch erweitert werden können, solange sie keine neuen Funktionen bringen, also nicht mächtiger werden. Dies gilt für die Regex in modernen Programmiersprachen nicht, sie haben Features wie lookaheads oder backreferences, welche sich nicht in regulären Ausdrücken umsetzen lassen. Der reguläre Ausdruck für das obige Beispiel wäre "(a|ε)(bb\*a)\*b\*"
+
+##### Pumping-Lemma
