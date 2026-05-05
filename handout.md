@@ -94,6 +94,8 @@ Oft wird die Backus-Naur-Form im Zusammenhang mit einem Syntaxdiagramm verwendet
 
 ##### Pumping-Lemma
 
+Das [Pumping-Lemma für kontextfreie Sprachen](https://www.cs.hs-rm.de/~sabel/teaching/archive/assets/SS2022/FSK/folien/18-pumping-lemma-cfl-4s.pdf) bietet eine Möglichkeit, zu widerlegen, dass eine Sprache kontextfrei ist. Die grundlegende Idee ist, dass wenn eine Sprache kontextfrei ist, ihre Wörter ab einer bestimmten Länge "aufgepumpt" werden können und immernoch in der Sprache sind.
+
 #### Typ 3 - Reguläre Grammatiken
 
 Ist eine Grammatik eine **reguläre Grammatik**, so ist die Ableitung am einfachsten, da hier die Wörter der Reihe nach von links nach rechts gebildet werden können. Die Definition besagt, dass auf der rechten Seite der Produktionsregel maximal ein Nichtterminalsymbol stehen darf und das dieses, wenn vorhanden, immer das letzte Zeichen (also ganz rechts) sein muss. Dies nennt man dann auch rechtsregulär, das entsprechende Gegenstück, die linksregulären Grammatiken, genügen ebenfalls (rechtsreguläre Grammatiken und linkreguläre Grammatiken sind *gleichmächtig* -> es lassen sich genau dieselben Sprachen erzeugen), solange innerhalb einer Grammatik nicht gemischt wird. Die von regulären Grammatiken erzeugten Sprachen entsprechen genau von (deterministisch oder nichtdeterministischen) endlichen Automaten akzeptierten Sprachen.
@@ -114,3 +116,5 @@ T -> ε | bS
 In der theoretischen Informatik ist ein **[regulärer Ausdruck](https://www.tcs.ifi.lmu.de/teaching/courses-ss-2024/formale-sprachen-und-komplexitaet/fsk_de/vl-04a-ft-regulaere-ausdruecke.pdf)** strenger definiert als der aus vielen Programmiersprachen bekannte Regex, das Grundkonzept ist jedoch dasselbe. Mit regulären Ausdrücken können reguläre Sprachen durch eine Zeichenkette definiert werden. Oft wird erlaubt, dass reguläre Ausdrücke syntaktisch erweitert werden können, solange sie keine neuen Funktionen bringen, also nicht mächtiger werden. Dies gilt für die Regex in modernen Programmiersprachen nicht, sie haben Features wie lookaheads oder backreferences, welche sich nicht in regulären Ausdrücken umsetzen lassen. Der reguläre Ausdruck für das obige Beispiel wäre "(a|ε)(bb\*a)\*b\*"
 
 ##### Pumping-Lemma
+
+Das Pumping Lemma existiert nicht nur für kontextfreie, sondern auch reguläre Sprachen. Das Konzept vom [Pumping-Lemma für reguläre Sprachen](https://www.tcs.ifi.lmu.de/teaching/courses-ss-2023/formale-sprachen-und-komplexitaet/fsk_de/12-pumping-lemma.pdf) ist dasselbe, nur in einer einschränkenderen Form. Auch hier dient es zum Beweise, dass eine Sprache nicht regulär ist.
